@@ -1,0 +1,53 @@
+///////////////////////////////////
+//DEFAULT HLSL SHADER FILE
+
+//Vertex Shader 
+
+struct VS_IN
+{
+	float3 p : POSITION;
+	float4 c : COLOR;
+	float2 t : TEXTURE;
+};
+
+struct VS_OUT
+{
+	float4 p : SV_POSITION;
+	float4 c : COLOR0;
+	float2 t : TEXTURE0;	//TEXCOORD0
+};
+
+VS_OUT VSmain(VS_IN input)
+{
+	VS_OUT output = (VS_OUT)0;
+
+	output.p = float4(input.p, 1.0f);
+	output.c = input.c;
+	output.t = input.t;
+
+	return output;
+}
+
+//Pixel Shader
+
+Texture2D g_texA : register(t0);
+Texture2D g_maskTexA : register(t1);
+
+SamplerState g_state : register(s0);
+
+struct PS_IN
+{
+	float4 p : SV_POSITION;
+	float4 c : COLOR0;
+	float2 t : TEXTURE0;	//TEXCOORD0
+};
+
+float4 PSmain(PS_IN input) : SV_TARGET
+{
+	
+	float4 output = g_texA.Sample(g_state, input.t);
+
+	return output;
+
+	//return input.c;
+}

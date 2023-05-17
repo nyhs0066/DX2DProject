@@ -1,0 +1,16 @@
+
+Texture2D g_tex : register(t0);
+SamplerState g_sample : register(s0);
+
+struct VS_IN
+{
+	float4 p : SV_POSITION;
+	float4 c : COLOR;
+	float2 t : TEXTURE;
+};
+
+float4 PSmain(VS_IN vertex) : SV_TARGET
+{
+	//Sample함수는 대소문자 구분하니까 유의 - 함수는 대소문자를 구분하는 것 같다.
+	return g_tex.Sample(g_sample, vertex.t);
+}

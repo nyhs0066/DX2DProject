@@ -1,0 +1,42 @@
+struct VS_INPUT
+{
+	float3 p : POSITION0;
+	float4 c : COLOR0;
+	//float2 t : TEXTURE0;
+};
+
+struct VS_OUTPUT
+{
+	float4 p : SV_POSITION;
+	float4 c : COLOR0;
+	//float2 t : TEXCOORD0;
+};
+
+//상수 버퍼는 외부에서 수시로 업데이트 가능하며 여기 선언된 변수는 쉐이더 함수에서
+//전역 변수처럼 사용 가능하다.
+cbuffer cb0
+{
+	float4 color : packoffset(c0);
+	float fTime : packoffset(c1.x);
+};
+
+VS_OUTPUT VS(VS_INPUT input)
+{
+	VS_OUTPUT output = (VS_OUTPUT)0;
+
+	output.p = float4(input.p*fTime, 1.0f);
+	output.c = input.c * color;
+	//output.t = input.t;
+
+	return output;
+}
+
+Texture2D g_texA : register(t0);
+Texture2D g_texB : register(t1);
+
+SamplerState g_sampler : register(s0);
+
+float4 PS(VS_OUTPUT input) : SV_TARGET
+{
+	return input.c;
+}

@@ -1,0 +1,410 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MyCollision">
+    <Position X="4.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAQAAAAAAAAADAAAAAQEAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>mycollision.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyGameCore">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <Members>
+      <Method Name="~MyGameCore" Hidden="true" />
+      <Method Name="MyGameCore" Hidden="true" />
+    </Members>
+    <AssociationLine Name="pSpace" Type="MySpacePartition" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.25" Y="1.273" />
+        <Point X="2.75" Y="1.273" />
+        <Point X="2.75" Y="3.75" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="pPlayer" Type="MyObject" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.75" Y="1.321" />
+        <Point X="12.5" Y="1.321" />
+        <Point X="12.5" Y="3.75" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>EAAAIggAAAAAAQAAAAIAAAAAAAAAAAAAIIAAAQAAUEA=</HashCode>
+      <FileName>mygamecore.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="pSpace" />
+      <Field Name="pPlayer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="QuadTreeNode" Collapsed="true">
+    <Position X="0.75" Y="10" Width="1.5" />
+    <Members>
+      <Method Name="~QuadTreeNode" Hidden="true" />
+      <Method Name="QuadTreeNode" Hidden="true" />
+      <Method Name="setNode" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AgAAAAAwBAAIAQAAAAAAAAAAAAAAAAAAAAEAKAAAAAA=</HashCode>
+      <FileName>mynode.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="nPos" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="OctTreeNode" Collapsed="true">
+    <Position X="3.25" Y="10" Width="1.5" />
+    <Members>
+      <Method Name="~OctTreeNode" Hidden="true" />
+      <Method Name="OctTreeNode" Hidden="true" />
+      <Method Name="setNode" Hidden="true" />
+    </Members>
+    <AssociationLine Name="nPos" Type="MyCube" ManuallyRouted="true">
+      <Path>
+        <Point X="4.75" Y="10.396" />
+        <Point X="5.125" Y="10.396" />
+        <Point X="5.125" Y="17.438" />
+        <Point X="11.312" Y="17.438" />
+        <Point X="11.312" Y="15.175" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AgAABAEQBAAIAQAAAAAAAAAAAAAAAAAAAAEAIAAAAAA=</HashCode>
+      <FileName>mynode.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="nPos" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MyObject">
+    <Position X="11.75" Y="3.75" Width="1.5" />
+    <Members>
+      <Method Name="~MyObject" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAABAAAAQAAAAA=</HashCode>
+      <FileName>myobject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyObject2F">
+    <Position X="8.25" Y="5.5" Width="1.5" />
+    <Members>
+      <Method Name="~MyObject2F" Hidden="true" />
+      <Method Name="draw" Hidden="true" />
+      <Method Name="frame" Hidden="true" />
+      <Method Name="getPosition" Hidden="true" />
+      <Method Name="getWH" Hidden="true" />
+      <Field Name="mass" Hidden="true" />
+      <Method Name="MyObject2F" Hidden="true" />
+      <Field Name="posCircle" Hidden="true" />
+      <Field Name="posRect" Hidden="true" />
+      <Method Name="setPosition" Hidden="true" />
+      <Method Name="setWH" Hidden="true" />
+      <Field Name="speedPerSec" Hidden="true" />
+      <Field Name="vAccelerationPerSec" Hidden="true" />
+      <Field Name="vForcePerSec" Hidden="true" />
+      <Field Name="vFriction" Hidden="true" />
+      <Field Name="vVelocity" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>CIBEIYAAAEAAAAgAICIAEAQCgAABAAAABAAAAQQAAAA=</HashCode>
+      <FileName>myobject.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="vDirection" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MyDynamicObject2F" Collapsed="true">
+    <Position X="10.25" Y="6.5" Width="1.5" />
+    <Members>
+      <Method Name="draw" Hidden="true" />
+      <Method Name="frame" Hidden="true" />
+      <Method Name="MyDynamicObject2F" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAIAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>myobject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyObject3F">
+    <Position X="15.25" Y="5.5" Width="1.5" />
+    <Members>
+      <Method Name="~MyObject3F" Hidden="true" />
+      <Method Name="draw" Hidden="true" />
+      <Method Name="frame" Hidden="true" />
+      <Method Name="getPosition" Hidden="true" />
+      <Method Name="getWLH" Hidden="true" />
+      <Field Name="mass" Hidden="true" />
+      <Method Name="MyObject3F" Hidden="true" />
+      <Field Name="posCube" Hidden="true" />
+      <Field Name="posSphere" Hidden="true" />
+      <Method Name="setPosition" Hidden="true" />
+      <Method Name="setWLH" Hidden="true" />
+      <Field Name="speedPerSec" Hidden="true" />
+      <Field Name="vAccelerationPerSec" Hidden="true" />
+      <Field Name="vForcePerSec" Hidden="true" />
+      <Field Name="vFriction" Hidden="true" />
+      <Field Name="vVelocity" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AIBIIYAAAAAAAAgAICoAEAQCAgAAQAAABAAAAQQAACA=</HashCode>
+      <FileName>myobject.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="vDirection" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MyDynamicObject3F" Collapsed="true">
+    <Position X="17.25" Y="6.5" Width="1.5" />
+    <Members>
+      <Method Name="draw" Hidden="true" />
+      <Method Name="frame" Hidden="true" />
+      <Method Name="MyDynamicObject3F" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAIAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>myobject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player2F" Collapsed="true">
+    <Position X="6.25" Y="6.5" Width="1.5" />
+    <Members>
+      <Method Name="draw" Hidden="true" />
+      <Method Name="frame" Hidden="true" />
+      <Method Name="Player2F" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAQAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>myplayer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player3F" Collapsed="true">
+    <Position X="13.25" Y="6.5" Width="1.5" />
+    <Members>
+      <Method Name="draw" Hidden="true" />
+      <Method Name="frame" Hidden="true" />
+      <Method Name="Player3F" Hidden="true" />
+    </Members>
+    <InheritanceLine Type="MyObject3F" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="15.25" Y="6.558" />
+        <Point X="15.01" Y="6.558" />
+        <Point X="15.01" Y="6.894" />
+        <Point X="14.75" Y="6.894" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAgAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>myplayer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MySpacePartition">
+    <Position X="1.75" Y="3.75" Width="2" />
+    <Members>
+      <Method Name="~MySpacePartition" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>EEAAAAAAAABAAIAAAAAAAAAAAAABBAAAAABAAAAIAAA=</HashCode>
+      <FileName>myspacepartition.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuadTree">
+    <Position X="0.5" Y="6.25" Width="2" />
+    <Members>
+      <Method Name="~QuadTree" Hidden="true" />
+      <Method Name="addDynamicObject" Hidden="true" />
+      <Method Name="addStaticObject" Hidden="true" />
+      <Method Name="clear" Hidden="true" />
+      <Method Name="clearSub" Hidden="true" />
+      <Method Name="create" Hidden="true" />
+      <Method Name="createNode" Hidden="true" />
+      <Method Name="findPutNodeSub" Hidden="true" />
+      <Method Name="getBoundary" Hidden="true" />
+      <Method Name="getCollisionList" Hidden="true" />
+      <Method Name="getCollisionListSub" Hidden="true" />
+      <Field Name="maxDepth" Hidden="true" />
+      <Method Name="QuadTree" Hidden="true" />
+      <Method Name="resetAllDynamicList" Hidden="true" />
+      <Method Name="resetSubTreeDList" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>EMAAAAgAAABAAIAAAAIAAAAAAAAhDAQEAAVAAICAAAA=</HashCode>
+      <FileName>myspacepartition.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="pRoot" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Octree">
+    <Position X="3" Y="6.25" Width="2" />
+    <Members>
+      <Method Name="~Octree" Hidden="true" />
+      <Method Name="addDynamicObject" Hidden="true" />
+      <Method Name="addStaticObject" Hidden="true" />
+      <Method Name="clear" Hidden="true" />
+      <Method Name="clearSub" Hidden="true" />
+      <Method Name="create" Hidden="true" />
+      <Method Name="createNode" Hidden="true" />
+      <Method Name="findPutNodeSub" Hidden="true" />
+      <Method Name="getBoundary" Hidden="true" />
+      <Method Name="getCollisionList" Hidden="true" />
+      <Method Name="getCollisionListSub" Hidden="true" />
+      <Field Name="maxDepth" Hidden="true" />
+      <Method Name="Octree" Hidden="true" />
+      <Method Name="resetAllDynamicList" Hidden="true" />
+      <Method Name="resetSubTreeDList" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>EMAAAAgAAABAAIAAAgIAAAAAAAAhDAQAAIVAAIAAAAA=</HashCode>
+      <FileName>myspacepartition.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="pRoot" />
+    </ShowAsAssociation>
+  </Class>
+  <Struct Name="MyShape" Collapsed="true">
+    <Position X="9.5" Y="16.25" Width="1.5" />
+    <Members>
+      <Method Name="~MyShape" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>myshape.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="MyCircle" Collapsed="true">
+    <Position X="8.5" Y="13.75" Width="1.5" />
+    <Members>
+      <Method Name="MyCircle" Hidden="true" />
+      <Method Name="operator!=" Hidden="true" />
+      <Method Name="operator==" Hidden="true" />
+      <Field Name="radius" Hidden="true" />
+      <Method Name="set" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAQAAQAAAEAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>myshape.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="cPos" />
+    </ShowAsAssociation>
+  </Struct>
+  <Struct Name="MyRect">
+    <Position X="6.75" Y="13.75" Width="1.5" />
+    <Members>
+      <Field Name="fWH" Hidden="true" />
+      <Method Name="MyRect" Hidden="true" />
+      <Method Name="operator!=" Hidden="true" />
+      <Method Name="operator==" Hidden="true" />
+      <Method Name="set" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAQAAYAAAAEAAAAACAAAAAAAIAA=</HashCode>
+      <FileName>myshape.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="pos" />
+    </ShowAsAssociation>
+  </Struct>
+  <Struct Name="MySphere" Collapsed="true">
+    <Position X="12" Y="13.75" Width="1.5" />
+    <Members>
+      <Method Name="MySphere" Hidden="true" />
+      <Method Name="operator!=" Hidden="true" />
+      <Method Name="operator==" Hidden="true" />
+      <Field Name="radius" Hidden="true" />
+      <Method Name="set" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAACAAAQAAQAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>myshape.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="cPos" />
+    </ShowAsAssociation>
+  </Struct>
+  <Struct Name="MyCube">
+    <Position X="10.25" Y="13.75" Width="1.5" />
+    <Members>
+      <Field Name="fWLH" Hidden="true" />
+      <Method Name="MyCube" Hidden="true" />
+      <Method Name="operator!=" Hidden="true" />
+      <Method Name="operator==" Hidden="true" />
+      <Method Name="set" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAICAAAAAAAAAACAAQAAYAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>myshape.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="pos" />
+    </ShowAsAssociation>
+  </Struct>
+  <Struct Name="MyPair2F" Collapsed="true">
+    <Position X="7.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>myvector.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="MyPair3F" Collapsed="true">
+    <Position X="11" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>myvector.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="MyVector2F">
+    <Position X="7.75" Y="9" Width="1.5" />
+    <Members>
+      <Method Name="getDistanceSquare2f" Hidden="true" />
+      <Method Name="lengthSquare" Hidden="true" />
+      <Method Name="MyVector2F" Hidden="true" />
+      <Method Name="operator-" Hidden="true" />
+      <Method Name="operator!=" Hidden="true" />
+      <Method Name="operator*" Hidden="true" />
+      <Method Name="operator+" Hidden="true" />
+      <Method Name="operator+=" Hidden="true" />
+      <Method Name="operator-=" Hidden="true" />
+      <Method Name="operator==" Hidden="true" />
+      <Method Name="set" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAggAAAAAAMQIAQAAAAAggAAABAAgAAAAAAA=</HashCode>
+      <FileName>myvector.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="MyVector3F">
+    <Position X="11" Y="9" Width="1.5" />
+    <Members>
+      <Method Name="getDistanceSquare" Hidden="true" />
+      <Method Name="lengthSquare" Hidden="true" />
+      <Method Name="MyVector3F" Hidden="true" />
+      <Method Name="operator-" Hidden="true" />
+      <Method Name="operator!=" Hidden="true" />
+      <Method Name="operator*" Hidden="true" />
+      <Method Name="operator+" Hidden="true" />
+      <Method Name="operator+=" Hidden="true" />
+      <Method Name="operator-=" Hidden="true" />
+      <Method Name="operator==" Hidden="true" />
+      <Method Name="set" Hidden="true" />
+    </Members>
+    <InheritanceLine Type="MyPair3F" FixedFromPoint="true">
+      <Path>
+        <Point X="11.75" Y="12.25" />
+        <Point X="11.75" Y="11.194" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAggIQAAAAMQIAQAAAAAAgAAABAAgAAAAAAA=</HashCode>
+      <FileName>myvector.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="CollisionType">
+    <Position X="6.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAgAAAAQAAAAAA=</HashCode>
+      <FileName>mycollision.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>

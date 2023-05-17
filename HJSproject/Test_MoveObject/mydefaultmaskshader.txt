@@ -1,0 +1,53 @@
+///////////////////////////
+// mydefaultshader.txt : 기본 설정 값으로 사용하게 될 쉐이더
+//
+//		1. 각 문 끝에 세미콜론 붙이는 거 잊지말자.
+//		2. in, out은 키워드가 존재하므로 유의
+//		3. 선언된 변수의 하위 변수가 존재하고 이름이 붙지 않은 경우 
+//				-float4를 기준으로 x, y, z, w / r, g, b, a 로 순차적으로 접근 가능
+//				-둘 사이에 혼용 사용 금지
+//		4. 각 의미 체계 변수(sementic)는 시스템이 사용하는 값(SV_접두)과 사용자 정의형이 있다.
+//				-파이프 라인 바인딩시 함수의 인수로 어떤 슬롯에 배치 할 지가 정해진다.
+//				-이는 사용자 정의 의미 이름도 마찬가지이며 그 슬롯의 번호에 따라 변수접미에 숫자로 그 슬롯 번호를 나타낸다.
+//
+
+//VSmain, PSmain과 같은 표현은 나중에 쉐이더를 여러개를 통합적으로 쓰게 되는 곳에서 사용할 예정
+
+struct VS_INPUT
+{
+	float3 p : POSITION0;
+	float4 c : COLOR0;
+	float2 t : TEXTURE0;
+};
+
+struct VS_OUTPUT
+{
+	float4 p : SV_POSITION;
+	float4 c : COLOR0;
+	float2 t : TEXCOORD0;
+};
+
+VS_OUTPUT VS(VS_INPUT input)
+{
+	VS_OUTPUT output = (VS_OUTPUT)0;
+
+	output.p = float4(input.p, 1.0f);
+	output.c = input.c;
+	output.t = input.t;
+
+	return output;
+}
+
+Texture2D g_texA : register(t0);
+Texture2D g_texB : register(t1);
+
+SamplerState g_sampler : register(s0);
+
+float4 PS(VS_OUTPUT input) : SV_TARGET
+{
+	float4 color = g_texA.Sample(g_sampler, input.t);
+	float4 mask = g_texB.Sample(g_sampler, input.t);
+	if(mask.r > 0.5f) { discard; }
+
+	return color;
+}
